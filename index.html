@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Mythoria Hub — katalog hiburan, drama, film, dan tautan tontonan resmi.">
+<meta name="theme-color" content="#10131c">
+<title>Mythoria Hub — Temukan Hiburanmu</title>
+<style>
+:root{--bg:#0b0e14;--panel:#141925;--panel2:#1b2231;--text:#f5f7fb;--muted:#a9b2c5;--accent:#b9f36b;--line:#2a3345}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1b2940 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{position:sticky;top:0;z-index:10;background:#0b0e14eF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}.brand{font-size:1.25rem;font-weight:900;letter-spacing:.2px;white-space:nowrap}.brand span{color:var(--accent)}nav{display:flex;gap:16px;flex:1}nav a{color:var(--muted);text-decoration:none;font-size:.94rem}nav a:hover{color:var(--accent)}
+.search{display:flex;gap:8px;flex:1;min-width:210px;max-width:350px}.search input{width:100%;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 13px;color:var(--text);outline:none}.search input:focus{border-color:var(--accent)}
+main{max-width:1180px;margin:auto;padding:28px 20px 60px}.hero{border:1px solid #39475d;border-radius:24px;padding:clamp(24px,5vw,52px);background:linear-gradient(115deg,#202d42,#111722 65%,#28351d);position:relative;overflow:hidden}.hero:after{content:"✦";position:absolute;right:7%;top:4%;font-size:clamp(90px,20vw,220px);color:#b9f36b12;line-height:1}.eyebrow{color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.04;max-width:650px;margin:14px 0}.hero p{max-width:580px;color:#c5cede;line-height:1.7}.btn{display:inline-block;background:var(--accent);color:#151a12;text-decoration:none;font-weight:800;padding:12px 17px;border-radius:12px;margin-top:10px;border:0;cursor:pointer}.notice{margin:18px 0 28px;padding:13px 15px;border:1px solid #344052;border-radius:12px;color:var(--muted);font-size:.9rem;line-height:1.55;background:#111722}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin:30px 0 16px}.section-head h2{margin:0;font-size:1.5rem}.section-head p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.filters{display:flex;gap:8px;flex-wrap:wrap}.chip{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer}.chip.active,.chip:hover{background:var(--accent);border-color:var(--accent);color:#141a10}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-4px);border-color:#62734c}.poster{aspect-ratio:4/5;display:flex;align-items:end;padding:16px;position:relative;overflow:hidden;background:linear-gradient(145deg,#354d65,#172331)}.poster:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:#ffffff10;top:-40px;right:-55px}.poster:after{content:"";position:absolute;width:120px;height:120px;border:1px solid #ffffff24;transform:rotate(35deg);top:30px;left:-45px}.poster .symbol{position:absolute;top:28%;left:50%;transform:translate(-50%,-50%);font-size:clamp(3rem,7vw,5rem);filter:drop-shadow(0 8px 20px #0005)}.poster .label{position:relative;z-index:1;font-weight:900;font-size:1.25rem;text-shadow:0 2px 10px #0008}.p2{background:linear-gradient(145deg,#614f38,#211b27)}.p3{background:linear-gradient(145deg,#2b5a54,#111f2b)}.p4{background:linear-gradient(145deg,#59394e,#211926)}.p5{background:linear-gradient(145deg,#4a4c71,#181b31)}.p6{background:linear-gradient(145deg,#4f6239,#1b261c)}.p7{background:linear-gradient(145deg,#66513a,#282018)}.p8{background:linear-gradient(145deg,#28536a,#141d2b)}
+.card-body{padding:14px}.tag{display:inline-block;color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase}.card h3{font-size:1rem;margin:7px 0}.card p{font-size:.85rem;color:var(--muted);line-height:1.5;min-height:39px;margin:0 0 12px}.card a{display:block;text-align:center;padding:10px;border:1px solid #3c4a5e;border-radius:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:.88rem}.card a:hover{border-color:var(--accent);color:var(--accent)}.empty{display:none;color:var(--muted);padding:30px;text-align:center;border:1px dashed var(--line);border-radius:14px}
+footer{border-top:1px solid var(--line);padding:25px 20px;color:var(--muted);font-size:.85rem;text-align:center}footer strong{color:var(--text)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:640px){.nav{gap:12px}nav{order:3;flex-basis:100%;overflow:auto}nav a{white-space:nowrap}.search{max-width:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card-body{padding:11px}.poster{padding:12px}.card p{min-height:60px}.hero{border-radius:18px}}
+@media(max-width:360px){.grid{grid-template-columns:1fr 1fr}.poster .label{font-size:1rem}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <div class="brand">MYTHORIA<span> HUB</span> ✦</div>
+  <nav><a href="#beranda">Beranda</a><a href="#katalog">Katalog</a><a href="#tentang">Tentang</a></nav>
+  <div class="search"><input id="search" type="search" placeholder="Cari judul atau genre..." aria-label="Cari katalog"></div>
+</div></header>
+<main>
+<section class="hero" id="beranda">
+  <div class="eyebrow">Your next story starts here</div>
+  <h1>Temukan cerita yang bikin penasaran.</h1>
+  <p>Jelajahi pilihan drama, fantasi, aksi, dan kisah romantis dalam satu katalog yang nyaman dibuka dari HP. Pilih judul untuk mencari sumber tontonan resminya.</p>
+  <a class="btn" href="#katalog">Jelajahi Katalog ↓</a>
+</section>
+<div class="notice">ℹ️ <strong>Info:</strong> Ini katalog contoh yang siap dikembangkan. Tombol sumber akan membuka pencarian resmi, bukan menyimpan atau menayangkan video bajakan. Tambahkan hanya judul dan tautan yang kamu punya izin untuk bagikan.</div>
+<section id="katalog">
+  <div class="section-head"><div><h2>Katalog pilihan</h2><p id="count">8 pilihan untuk mulai menjelajah</p></div>
+  <div class="filters" aria-label="Filter kategori">
+    <button class="chip active" data-filter="semua">Semua</button><button class="chip" data-filter="drama">Drama</button><button class="chip" data-filter="fantasi">Fantasi</button><button class="chip" data-filter="aksi">Aksi</button><button class="chip" data-filter="romantis">Romantis</button>
+  </div></div>
+  <div class="grid" id="grid">
+    <article class="card" data-category="fantasi" data-search="kerajaan langit fantasi petualangan"><div class="poster"><span class="symbol">🐉</span><span class="label">Kerajaan Langit</span></div><div class="card-body"><span class="tag">Fantasi</span><h3>Kerajaan Langit</h3><p>Petualangan di dunia kuno penuh rahasia dan naga.</p><a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=drama+fantasi+resmi">Cari sumber resmi ↗</a></div></article>
+    <article class="card" data-category="romantis" data-search="janji di musim hujan romantis cinta"><div class="poster p2"><span class="symbol">🌧️</span><span class="label">Janji di Musim Hujan</span></div><div class="card-body"><span class="tag">Romantis</span><h3>Janji di Musim Hujan</h3><p>Kisah dua orang yang bertemu kembali setelah lama berpisah.</p><a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=drama+romantis+resmi">Cari sumber resmi ↗</a></div></article>
+    <article class="card" data-category="aksi" data-search="bayangan terakhir aksi misteri"><div class="poster p3"><span class="symbol">⚔️</span><span class="label">Bayangan Terakhir</span></div><div class="card-body"><span class="tag">Aksi</span><h3>Bayangan Terakhir</h3><p>Seorang pendekar mengejar jawaban dari masa lalunya.</p><a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=film+aksi+resmi">Cari sumber resmi ↗</a></div></article>
+    <article class="card" data-category="drama" data-search="rumah untuk pulang drama keluarga"><div class="poster p4"><span class="symbol">🏡</span><span class="label">Rumah untuk Pulang</span></div><div class="card-body"><span class="tag">Drama</span><h3>Rumah untuk Pulang</h3><p>Drama keluarga tentang kesempatan kedua dan pengampunan.</p><a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=drama+keluarga+resmi">Cari sumber resmi ↗</a></div></article>
+    <article class="card" data-category="fantasi" data-search="sistem takdir fantasi reinkarnasi"><div class="poster p5"><span class="symbol">✧</span><span class="label">Sistem Takdir</span></div><div class="card-body"><span class="tag">Fantasi</span><h3>Sistem Takdir</h3><p>Kesempatan hidup baru mengubah nasib sang tokoh utama.</p><a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=drama+reinkarnasi+resmi">Cari sumber resmi ↗</a></div></article>
+    <article class="card" data-category="drama" data-search="di balik mahkota drama sejarah kerajaan"><div class="poster p6"><span class="symbol">👑</span><span class="label">Di Balik Mahkota</span></div><div class="card-body"><span class="tag">Drama sejarah</span><h3>Di Balik Mahkota</h3><p>Intrik istana, rahasia keluarga, dan pilihan yang sulit.</p><a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=drama+sejarah+resmi">Cari sumber resmi ↗</a></div></article>
+    <article class="card" data-category="romantis" data-search="bos dan sekretaris romantis komedi"><div class="poster p7"><span class="symbol">💌</span><span class="label">Bos dan Sekretaris</span></div><div class="card-body"><span class="tag">Romantis</span><h3>Bos dan Sekretaris</h3><p>Hubungan profesional berubah menjadi kisah yang tak terduga.</p><a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=drama+romantis+kantor+resmi">Cari sumber resmi ↗</a></div></article>
+    <article class="card" data-category="aksi" data-search="misi tengah malam aksi thriller"><div class="poster p8"><span class="symbol">🌃</span><span class="label">Misi Tengah Malam</span></div><div class="card-body"><span class="tag">Aksi</span><h3>Misi Tengah Malam</h3><p>Satu malam, satu misi, dan rahasia yang harus diungkap.</p><a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=film+thriller+resmi">Cari sumber resmi ↗</a></div></article>
+  </div>
+  <div class="empty" id="empty">Tidak ada judul yang cocok. Coba kata kunci atau kategori lain.</div>
+</section>
+<section id="tentang" style="margin-top:42px"><div class="section-head"><div><h2>Tentang Mythoria Hub</h2><p>Katalog hiburan yang ringan dan ramah HP.</p></div></div><div class="notice">Situs ini adalah katalog tautan. Mythoria Hub tidak meng-host file video. Pastikan setiap tautan, poster, dan materi yang ditambahkan memiliki izin atau berasal dari sumber resmi. Untuk menambahkan judul sungguhan, ubah data kartu di file <strong>index.html</strong>.</div></section>
+</main>
+<footer>© <span id="year"></span> <strong>Mythoria Hub</strong> · Dibuat untuk penjelajahan hiburan yang lebih mudah.</footer>
+<script>
+const search=document.getElementById('search'), cards=[...document.querySelectorAll('.card')], chips=[...document.querySelectorAll('.chip')], empty=document.getElementById('empty'), count=document.getElementById('count');
+let active='semua';
+function filterCards(){let q=search.value.trim().toLowerCase(), shown=0;cards.forEach(c=>{let okCat=active==='semua'||c.dataset.category===active;let okText=(c.dataset.search+' '+c.innerText).toLowerCase().includes(q);let show=okCat&&okText;c.style.display=show?'':'none';if(show)shown++});empty.style.display=shown?'none':'block';count.textContent=shown+' judul ditampilkan'}
+chips.forEach(b=>b.addEventListener('click',()=>{chips.forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;filterCards()}));
+search.addEventListener('input',filterCards);document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body></html>
